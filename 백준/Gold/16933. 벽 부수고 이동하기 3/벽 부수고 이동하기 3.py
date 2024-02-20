@@ -23,7 +23,7 @@ def bfs():
         for i in range(4):
             nr = r + dr[i]
             nc = c + dc[i]
-            if 0 <= nr < N and 0 <= nc < M : # 낮인 경우,
+            if 0 <= nr < N and 0 <= nc < M :
                 if visited[nr][nc][w] == 0 and graph[nr][nc] == 0: # 길인 경우,
                     visited[nr][nc][w] = t
                     q.append((nr,nc,t+1,w))
