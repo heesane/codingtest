@@ -1,6 +1,6 @@
-# 백준 1003 피보나치 함수
+fib = [(1, 0), (0, 1)]
 for _ in range(int(input())):
-    zeros,ones = 1,0
-    for i in range(int(input())):
-        zeros,ones = ones,zeros+ones
-    print(zeros,ones)
+    n = int(input())
+    for i in range(len(fib), n + 1):
+        fib.append((fib[i - 1][0] + fib[i - 2][0], fib[i - 1][1] + fib[i - 2][1]))
+    print(fib[n][0], fib[n][1])
