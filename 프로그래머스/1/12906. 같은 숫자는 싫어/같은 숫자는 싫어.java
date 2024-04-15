@@ -4,24 +4,24 @@ public class Solution {
     public int[] solution(int []arr) {
         int[] answer = {};
         
-        Deque<Integer> dq = new ArrayDeque<>();
+        Stack<Integer> st = new Stack<>();
         
         for(int num : arr){
-            if(dq.size() == 0){
-                dq.offerLast(num);
+            if(st.size() == 0){
+                st.push(num);
                 continue;
             }
-            if(num == dq.peekLast()){
+            if(num == st.peek()){
                 continue;
             }
             else{
-                dq.offerLast(num);
+                st.push(num);
             } 
         }
-        int[] ret_int = new int[dq.size()];
+        int[] ret_int = new int[st.size()];
         int idx = 0;
-        for(int d:dq){
-            ret_int[idx++] = d;
+        for(int s:st){
+            ret_int[idx++] = s;
         }
         return ret_int;
     }
